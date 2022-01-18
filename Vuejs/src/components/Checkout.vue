@@ -7,12 +7,11 @@
           <li class="active">Check out</li>
         </ol>
       </div>
-      
 
       <div class="review-payment">
         <h2>Review & Payment</h2>
       </div>
-<!-- checkout -->
+      <!-- checkout -->
       <div class="table-responsive cart_info">
         <table class="table table-condensed">
           <thead>
@@ -58,7 +57,8 @@
               </td>
               <td class="cart_total">
                 <p class="cart_total_price">
-                  {{ cart.price * cart.quantity }}<i class="fa fa-inr" aria-hidden="true"></i>
+                  {{ cart.price * cart.quantity
+                  }}<i class="fa fa-inr" aria-hidden="true"></i>
                 </p>
               </td>
             </tr>
@@ -69,7 +69,10 @@
                   <tr>
                     <td>Total payment</td>
                     <td>
-                      <span>{{ this.$store.getters.amount }}<i class="fa fa-inr" aria-hidden="true"></i></span>
+                      <span
+                        >{{ this.$store.getters.amount
+                        }}<i class="fa fa-inr" aria-hidden="true"></i
+                      ></span>
                     </td>
                   </tr>
                 </table>
@@ -190,8 +193,24 @@
                   >
                     <span class="">*Mobile number is required </span>
                   </div>
-
-                  <div class="form-group">
+                  <br />
+                  <div class="payment-options">
+                    <span>
+                      <label
+                        ><input type="radio" v-model="pay" value="COD" /> Cash
+                        on delivery</label
+                      >
+                    </span>
+                    <span>
+                      <label
+                        ><input type="radio" v-model="pay" value="online" />
+                        Paypal</label
+                      >
+                    </span>
+                    <div v-show="pay == 'online'">
+                      <Paypal />
+                    </div>
+                    <br />
                     <button class="btn btn-primary">Submit</button>
                   </div>
                 </form>
@@ -200,30 +219,18 @@
           </div>
         </div>
       </div>
-      <div class="payment-options">
-        <span>
-          <label
-            ><input type="radio" v-model="pay" value="COD" /> Cash on
-            delivery</label
-          >
-        </span>
-        <span>
-          <label
-            ><input type="radio" v-model="pay" value="online" /> Paypal</label
-          >
-        </span>
-      </div>
     </div>
   </section>
- 
 </template>
 
 <script>
 import { required, email } from "vuelidate/lib/validators";
 import { userOrder } from "@/common/Service.js";
 import { userAddress } from "@/common/Service.js";
+import Paypal from "../components/Paypal.vue";
 export default {
   name: "Checkout",
+  components: { Paypal },
   data() {
     return {
       details: undefined,
@@ -231,6 +238,7 @@ export default {
       email_id: localStorage.getItem("uid"),
       server: "http://127.0.0.1:8000/uploads/",
       pay: "COD",
+      pp: false,
       user: {
         firstName: "",
         lastName: "",
@@ -275,7 +283,7 @@ export default {
           };
           userOrder(obj).then((res) => {
             console.log(res.data);
-            this.$swal("Order Placed","","success")
+            this.$swal("Order Placed", "", "success");
           });
         });
         let formData = {
@@ -289,6 +297,7 @@ export default {
           localStorage.removeItem("mycart");
           this.$router.push("/myorders");
           console.log(res.data);
+          window.location.reload();
         });
       }
     },
