@@ -174,6 +174,7 @@ export default {
       submitted: false,
     };
   },
+  //validations
   validations: {
     user: {
       name: {

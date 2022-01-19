@@ -23,6 +23,7 @@ class CreateUserOrdersTable extends Migration
             $table->string('product_quantity');
             $table->string('coupon_code')->nullable();
             $table->integer('amount');
+            $table->integer('paidAmount');
             $table->string("payment_mode");
             $table->string("status")->default("pending");
             $table->timestamps();

@@ -1,4 +1,5 @@
 <template>
+  <!-- cms -->
   <section class="about-company-section">
     <div class="container p-1 p-sm-3">
       <div class="row">
@@ -42,6 +43,7 @@ export default {
       console.log(res.data);
     });
   },
+  //allows one to watch a component and perform specified actions when the value of the component changes
   watch: {
     $route(to) {
       this.paramm = to.params.id;

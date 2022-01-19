@@ -119,7 +119,9 @@
                 <li>
                   <!-- <button v-if="loginn" @click="logout()">Logout</button> -->
                   <router-link to="/" v-if="loginn" @click.native="logout()"
-                    ><button class="btn btn-warning">Logout</button></router-link
+                    ><button class="btn btn-warning">
+                      Logout
+                    </button></router-link
                   >
                   <router-link to="/login" v-if="!loginn">Login</router-link>
                 </li>

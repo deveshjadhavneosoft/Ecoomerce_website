@@ -207,6 +207,7 @@
                         Paypal</label
                       >
                     </span>
+                    <!-- paypal -->
                     <div v-show="pay == 'online'">
                       <Paypal />
                     </div>
@@ -238,7 +239,7 @@ export default {
       email_id: localStorage.getItem("uid"),
       server: "http://127.0.0.1:8000/uploads/",
       pay: "COD",
-      pp: false,
+      orderId: Math.floor(Math.random() * 90000) + 10000,
       user: {
         firstName: "",
         lastName: "",
@@ -279,6 +280,8 @@ export default {
             product_price: item.price,
             amount: item.price * item.quantity,
             coupon_code: this.$store.getters.coupon,
+            orderId:this.orderId,
+            paidAmount:this.$store.getters.amount,
             payment_mode: this.pay,
           };
           userOrder(obj).then((res) => {

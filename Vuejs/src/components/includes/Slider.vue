@@ -6,6 +6,7 @@
         <div class="col-sm-12">
           <div id="slider-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
+              <!-- fetching banners -->
               <li
                 v-for="(banner, index) in banners"
                 v-bind:key="index"
@@ -24,16 +25,9 @@
                 <div class="col-sm-6">
                   <h1><span>E</span>-SHOPPER</h1>
                   <h2>{{ banner.caption }}</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <button type="button" class="btn btn-default get">
-                    Get it now
-                  </button>
                 </div>
                 <div class="col-sm-6">
+                  <!-- fetching images of banner -->
                   <img
                     :src="server + banner.image_path"
                     class="girl img-responsive"
@@ -70,6 +64,7 @@ export default {
   name: "Slider",
   data() {
     return {
+      //path of image folder
       server: "http://127.0.0.1:8000/uploads/",
       banners: null,
     };

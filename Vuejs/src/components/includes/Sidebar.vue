@@ -8,6 +8,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
+                <!-- passed param to display categories -->                
                 <router-link :to="`/category/${category.id}`">{{
                   category.name
                 }}</router-link>
@@ -36,6 +37,7 @@ export default {
       categories: null,
     };
   },
+  //when component is added to dom vue calls mounted
   mounted() {
     categories().then((res) => {
       console.log(res.data);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2022 at 11:43 AM
+-- Generation Time: Jan 19, 2022 at 05:49 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -40,7 +40,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image_path`, `caption`, `created_at`, `updated_at`) VALUES
-(1, '1798674658nord2.jpg', 'One Plus Nord2', NULL, '2022-01-09 23:23:13'),
+(1, '1798674658nord2.jpg', 'Use Coupan code :-d124f6smth to get upto 200Rs discount on minimum shopping of above 500', NULL, '2022-01-18 01:36:15'),
 (2, '1157638169Dell.jpg', 'Dell Inspiron 7415 AMD R5 5500U 14 inches FHD Touch Display 2 in 1 Business Laptop (8GB/512GB SSD/Intel Integrated Graphics/Windows 10 + MSO/Backlit KB', NULL, NULL),
 (3, '920391148noise.jpg', 'Noise ColorFit Ultra Bezel-Less Smart Watch with 1.75\" HD TruView Display, 60 Sports Modes, SpO2, Heart Rate, Stress, REM & Sleep Monitor', NULL, NULL);
 
@@ -115,7 +115,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Devesh', 'deveshjadhav982@gmail.com', 8975601145, 'hiiiiiiiiiiiiiiiiiii', NULL, NULL);
+(1, 'Devesh', 'deveshjadhav982@gmail.com', 8975601145, 'hiiiiiiiiiiiiiiiiiii', NULL, NULL),
+(2, 'sourabh', 'sourabh.shinde01@gmail.com', 8975601145, 'hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,8 @@ CREATE TABLE `c_m_s_managements` (
 --
 
 INSERT INTO `c_m_s_managements` (`id`, `title`, `image_path`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', '1877186183cm1.jpg', 'This website is operated by E Shopping Mantra. Throughout the site, the terms “we”, “us” and “our” refer to E Shopping Mantra. E Shopping Mantra offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.\r\n\r\nBy visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.', NULL, '2022-01-15 14:34:45');
+(1, 'About Us', '1877186183cm1.jpg', 'This website is operated by E Shopping Mantra. Throughout the site, the terms “we”, “us” and “our” refer to E Shopping Mantra. E Shopping Mantra offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.\r\n\r\nBy visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.', NULL, '2022-01-15 14:34:45'),
+(2, 'services', '1758752380cms2.png', 'hiiiiiii', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -212,11 +214,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (27, '2022_01_13_080823_create_wishlists_table', 2),
 (28, '2022_01_13_124412_create_wishlists_table', 3),
 (29, '2022_01_03_092842_create_order_details_table', 4),
-(30, '2022_01_13_192821_create_user_orders_table', 4),
 (31, '2022_01_14_115736_create_user_addresses_table', 4),
 (32, '2022_01_14_184120_create_c_m_s_managements_table', 4),
-(33, '2022_01_15_180701_create_user_orders_table', 5),
-(34, '2022_01_15_150744_create_configurations_table', 6);
+(34, '2022_01_15_150744_create_configurations_table', 6),
+(35, '2022_01_15_180701_create_user_orders_table', 7);
 
 -- --------------------------------------------------------
 
@@ -462,7 +463,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `role
 (4, 'prashant', 'mishra', 'prashant.mishra4801@gmail.com', '$2y$10$zCxx4UlFDdAL6tzhpWFQ9Ocgl07TbfLm55yH6ZHwdIsZiV2Yw6/FK', 'customer', 1, NULL, NULL, NULL, NULL),
 (6, 'abc', 'abc', 'vyshnavi.devi18@gmail.com', '$2y$10$TclbQrdVzQrv/sItzP96EujFScwTSysP81W0xdtBG8lf4qMzbDdrW', 'customer', 1, NULL, NULL, NULL, NULL),
 (7, 'ecom', 'ecom', 'ecom3767@gmail.com', '$2y$10$39QfqXIFH41cR2hXIXFi2.uCzONEiYwZUyeWO6Qd6bv94ipKIgnji', 'customer', 1, NULL, NULL, NULL, NULL),
-(8, 'kgce', 'kgce', 'kgcesem78@gmail.com', '$2y$10$ZAooYTeqF7eoAzAR66ljuO9uGvU7dh3/msd9uqp/m8xY.2wKMDHju', 'customer', 1, NULL, NULL, NULL, NULL);
+(8, 'kgce', 'kgce', 'kgcesem78@gmail.com', '$2y$10$ZAooYTeqF7eoAzAR66ljuO9uGvU7dh3/msd9uqp/m8xY.2wKMDHju', 'customer', 1, NULL, NULL, NULL, NULL),
+(9, 'sourabh1', 'sourabh', 'sourabh.shinde01@gmail.com', '$2y$10$mfIGyUoqwfKVytcGLFW5xu8GaanRiQl3aIyOYuEUaQrD9KqmKkxSq', 'customer', 1, NULL, NULL, NULL, '2022-01-17 08:52:17');
 
 -- --------------------------------------------------------
 
@@ -500,7 +502,14 @@ INSERT INTO `user_addresses` (`id`, `user_email`, `name`, `address`, `phone`, `p
 (12, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
 (13, 'kgcesem78@gmail.com', 'kgce', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
 (14, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
-(15, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL);
+(15, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(16, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(17, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(18, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(19, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(20, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(21, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL),
+(22, 'deveshjadhav982@gmail.com', 'Devesh', '203,Ramkrishna APPT,keshav nagar ,Boisar,401501', 8975601145, 401501, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -518,6 +527,7 @@ CREATE TABLE `user_orders` (
   `product_quantity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `coupon_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `amount` int(11) NOT NULL,
+  `paidAmount` int(11) NOT NULL,
   `payment_mode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -528,20 +538,9 @@ CREATE TABLE `user_orders` (
 -- Dumping data for table `user_orders`
 --
 
-INSERT INTO `user_orders` (`id`, `orderId`, `email`, `product_name`, `product_image`, `product_price`, `product_quantity`, `coupon_code`, `amount`, `payment_mode`, `status`, `created_at`, `updated_at`) VALUES
-(1, '314484', 'nis@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'delivered', NULL, '2022-01-16 12:24:25'),
-(2, '355230', 'nis@gmail.com', 'Nike', '1972391360nike.jpg', 4000, '1', 'd124f6smth', 4000, 'COD', 'pending', NULL, NULL),
-(3, '225445', 'nis@gmail.com', 'Iphone 13', '1053148594i1.jpg', 100000, '1', NULL, 100000, 'COD', 'pending', NULL, NULL),
-(4, '430453', 'nis@gmail.com', 'Sony SA-D40', '37564758sony.jpg', 40000, '1', NULL, 40000, 'COD', 'pending', NULL, NULL),
-(5, '508804', 'prashant.mishra4801@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'pending', NULL, NULL),
-(6, '473842', 'prashant.mishra4801@gmail.com', 'Nike', '1972391360nike.jpg', 4000, '1', NULL, 4000, 'COD', 'pending', NULL, NULL),
-(7, '497115', 'deveshjadhav982@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'pending', NULL, NULL),
-(8, '142586', 'prashant.mishra4801@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'pending', NULL, NULL),
-(9, '155413', 'vyshnavi.devi18@gmail.com', 'Mask', '915353609mask1.jpg', 50, '10', NULL, 500, 'COD', 'pending', NULL, NULL),
-(10, '406333', 'vyshnavi.devi18@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'pending', NULL, NULL),
-(11, '670142', 'kgcesem78@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', 'd124f6smth', 5000, 'COD', 'pending', NULL, NULL),
-(12, '452721', 'prashant.mishra4801@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', NULL, 5000, 'COD', 'pending', NULL, NULL),
-(13, '289909', 'prashant.mishra4801@gmail.com', 'Dell Inspiron', '2124464821l1.jpg', 50000, '1', NULL, 50000, 'COD', 'pending', NULL, NULL);
+INSERT INTO `user_orders` (`id`, `orderId`, `email`, `product_name`, `product_image`, `product_price`, `product_quantity`, `coupon_code`, `amount`, `paidAmount`, `payment_mode`, `status`, `created_at`, `updated_at`) VALUES
+(1, '81979', 'deveshjadhav982@gmail.com', 'Noise ColorFit Ultra', '1179969482noise.jpg', 5000, '1', 'd124f6smth', 5000, 4800, 'online', 'delivered', NULL, '2022-01-19 01:10:40'),
+(2, '35226', 'deveshjadhav982@gmail.com', 'OnePlus', '1228253858n1.jpg', 40000, '1', 'd124f6smth', 40000, 39800, 'COD', 'pending', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -566,7 +565,8 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_email`, `pro_id`, `product_id`, `product_name`, `product_price`, `image_path`, `created_at`, `updated_at`) VALUES
-(4, 'deveshjadhav982@gmail.com', 1, 'm0uqnxefiv4w8s', 'OnePlus', '40000.00', 'http://127.0.0.1:8000/uploads/2076862670nord2.jpg', NULL, NULL);
+(4, 'deveshjadhav982@gmail.com', 1, 'm0uqnxefiv4w8s', 'OnePlus', '40000.00', 'http://127.0.0.1:8000/uploads/2076862670nord2.jpg', NULL, NULL),
+(6, 'sourabh.shinde01@gmail.com', 1, 'm0uqnxefiv4w8s', 'OnePlus', '40000.00', 'http://127.0.0.1:8000/uploads/1228253858n1.jpg', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -729,7 +729,7 @@ ALTER TABLE `configurations`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `coupons`
@@ -741,7 +741,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `c_m_s_managements`
 --
 ALTER TABLE `c_m_s_managements`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -753,7 +753,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `order_details`
@@ -801,25 +801,25 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user_addresses`
 --
 ALTER TABLE `user_addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_orders`
 --
 ALTER TABLE `user_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

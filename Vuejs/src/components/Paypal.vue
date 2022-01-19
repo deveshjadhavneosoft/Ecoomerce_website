@@ -14,8 +14,8 @@ export default {
       loaded: false,
       paidFor: false,
       product: {
-        price: this.$store.getters.amount,
-        description: "E-Shopper",
+      price: this.$store.getters.amount,
+      description: "E-Shopper",
       },
     };
   },

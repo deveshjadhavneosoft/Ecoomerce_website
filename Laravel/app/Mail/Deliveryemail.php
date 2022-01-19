@@ -7,11 +7,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Testmail extends Mailable
+class Deliveryemail extends Mailable
 {
     use Queueable, SerializesModels;
     public $details;
-
     /**
      * Create a new message instance.
      *
@@ -19,7 +18,7 @@ class Testmail extends Mailable
      */
     public function __construct($details)
     {
-        $this->details = $details;
+        $this->details=$details;
     }
 
     /**
@@ -30,13 +29,14 @@ class Testmail extends Mailable
     public function build()
     {
         $details = $this->details;
-        return $this->from("ecom3767@gmail.com")->view('sendmail')->with([
+        return $this->from("ecom3767@gmail.com")->view('Deliveryemail')->with([
             "email" => $details["email"],
             "product_name" => $details["product_name"],
             "price" => $details["product_price"],
             "quantity" => $details["product_quantity"],
             "amount" => $details["amount"],
-            "paidAmount"=>$details["paidAmount"]
+            "paidAmount"=>$details["paidAmount"],
+            "status"=>$details["status"]
         ]);
     }
 }

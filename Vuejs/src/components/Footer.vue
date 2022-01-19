@@ -138,6 +138,7 @@
           <div class="col-sm-3 col-sm-offset-1">
             <div class="single-widget">
               <h2>About Shopper</h2>
+              <!-- Newsletter -->
               <form @submit.prevent="subscribe()" class="searchform">
                 <input
                   type="text"

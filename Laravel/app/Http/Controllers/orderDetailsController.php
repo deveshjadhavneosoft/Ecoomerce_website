@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Deliveryemail;
 use Illuminate\Http\Request;
 use App\Models\Order_detail;
 use App\Models\User_order;
+use Illuminate\Support\Facades\Mail;
+
 
 class orderDetailsController extends Controller
 {
@@ -71,9 +74,12 @@ class orderDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userdata=User_order::where('id',$id)->first();
         $data = User_order::where('id', $id)->update([
             "status" => $request->status
         ]);
+        $details=User_order::find($id);
+        Mail::to($userdata->email)->send(new Deliveryemail($details));
         return redirect("orders");
     }
 

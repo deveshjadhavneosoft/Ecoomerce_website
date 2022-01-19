@@ -17,7 +17,12 @@
                   <div class="single-products">
                     <div class="productinfo text-center">
                       <router-link :to="`/productdetails/${pro.id}`">
-                        <img height="300px" width="250px" :src="pro.images[0].image" alt="" />
+                        <img
+                          height="300px"
+                          width="250px"
+                          :src="pro.images[0].image"
+                          alt=""
+                        />
                         <h2>{{ pro.price }}</h2>
                         <p>{{ pro.name }}</p>
                         <a href="#" class="btn btn-default add-to-cart"
@@ -48,10 +53,6 @@
               </div>
             </div>
             <!--features_items-->
-
-           
-
-            
           </div>
         </div>
       </div>

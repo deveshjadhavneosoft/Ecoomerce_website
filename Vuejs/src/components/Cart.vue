@@ -25,6 +25,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- fetching products -->
               <tr class="cart-menu" v-for="cart in details" :key="cart.id">
                 <td class="cart_product">
                   <img
@@ -46,6 +47,7 @@
                 </td>
                 <td class="cart_quantity">
                   <div class="cart_quantity_button">
+                    <!-- add quantity -->
                     <a class="cart_quantity_down" @click="addQty(cart)">
                       <i
                         class="fa fa-plus btn btn-warning"
@@ -60,6 +62,7 @@
                       autocomplete="off"
                       size="2"
                     />
+                    <!-- reduce quantity -->
                     <a class="cart_quantity_down" @click="subQty(cart)">
                       <i
                         class="fa fa-minus btn btn-warning"
@@ -70,11 +73,17 @@
                 </td>
                 <td class="cart_total">
                   <p class="cart_total_price">
-                    {{ cart.price * cart.quantity }}<i class="fa fa-inr" aria-hidden="true"></i>
+                    {{ cart.price * cart.quantity
+                    }}<i class="fa fa-inr" aria-hidden="true"></i>
                   </p>
                 </td>
                 <td class="cart_delete">
-                  <button class="cart_quantity_delete btn btn-danger" @click="delItem(cart)">
+
+                  <!-- delete item -->
+                  <button
+                    class="cart_quantity_delete btn btn-danger"
+                    @click="delItem(cart)"
+                  >
                     <i class="fa fa-times"></i>
                   </button>
                 </td>
@@ -85,15 +94,27 @@
                   <table class="table table-condensed total-result">
                     <tr>
                       <td>
-                        <input class="form-control" type="text" v-model="value" />
-                        <button class="btn btn-warning" type="submit" @click="applyCoupon()">
+                        <input
+                          class="form-control"
+                          type="text"
+                          v-model="value"
+                        />
+                        <!-- coupon -->
+                        <button
+                          class="btn btn-warning"
+                          type="submit"
+                          @click="applyCoupon()"
+                        >
                           Apply coupon
                         </button>
                       </td>
                     </tr>
                     <tr>
                       <td>Discount</td>
-                      <td>{{ this.discount }}<i class="fa fa-inr" aria-hidden="true"></i></td>
+                      <td>
+                        {{ this.discount
+                        }}<i class="fa fa-inr" aria-hidden="true"></i>
+                      </td>
                     </tr>
                     <tr class="shipping-cost">
                       <td>Shipping Cost</td>
@@ -102,7 +123,10 @@
                     <tr>
                       <td>Total</td>
                       <td>
-                        <span>{{ this.full() }}<i class="fa fa-inr" aria-hidden="true"></i></span>
+                        <span
+                          >{{ this.full()
+                          }}<i class="fa fa-inr" aria-hidden="true"></i
+                        ></span>
                       </td>
                     </tr>
                   </table>
@@ -112,7 +136,9 @@
           </table>
         </div>
         <div class="p1">
-          <button class="btn btn-warning" @click="payment()">Proceed to checkout</button>
+          <button class="btn btn-warning" @click="payment()">
+            Proceed to checkout
+          </button>
         </div>
       </div>
     </section>
@@ -143,7 +169,7 @@ export default {
     addQty(cart) {
       let item = this.details.indexOf(cart);
       this.details[item].quantity = this.details[item].quantity + 1;
-      let arr = JSON.stringify(this.details);
+      let arr = JSON.stringify(this.details);//converts to json string
       localStorage.setItem("mycart", arr);
     },
     //subtract items
@@ -156,11 +182,12 @@ export default {
     //delitems
     delItem(cart) {
       let item = this.details.indexOf(cart);
-      this.details.splice(item, 1);
+      this.details.splice(item, 1);//delete item
       let arr = JSON.stringify(this.details);
       localStorage.setItem("mycart", arr);
-      this.$store.dispatch("remItem", arr);
+      this.$store.dispatch("remItem", arr);//update details
     },
+    //total 
     full() {
       const items = JSON.parse(localStorage.getItem("mycart"));
       var sum = 0;
@@ -168,7 +195,7 @@ export default {
         sum = sum + item.price * item.quantity;
       });
       this.total = sum - this.discount;
-       this.total = sum - this.discount;
+      this.total = sum - this.discount;
       if (this.total > 500) {
         this.shipping = "free";
         return this.total;
@@ -204,6 +231,7 @@ export default {
         this.$swal("Unable to apply the coupon", "", "error");
       }
     },
+
     payment() {
       this.$store.dispatch("amount", this.total);
       this.$store.dispatch("coupon", this.coup);

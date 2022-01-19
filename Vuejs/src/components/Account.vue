@@ -11,8 +11,9 @@
                 <div class="alert alert-success">{{ this.msg }}</div>
               </div>
               <!-- form for account -->
+              <!-- update details -->
               <form @submit.prevent="update()">
-                 <label>Email</label>
+                <label>Email</label>
                 <input
                   type="text"
                   placeholder="Email"
@@ -20,7 +21,7 @@
                   readonly
                   name="last_name"
                 />
-                 <label>First Name</label>
+                <label>First Name</label>
                 <input
                   type="text"
                   placeholder="Firstname"
@@ -28,7 +29,7 @@
                   name="first_name"
                   required
                 />
-                 <label>Last Name</label>
+                <label>Last Name</label>
                 <input
                   type="text"
                   placeholder="Lastname"
@@ -42,6 +43,9 @@
           </div>
           <div class="col-sm-5 clearfix">
             <div class="bill-to">
+
+              <!-- change password -->
+              
               <p>Change Password</p>
               <div class="form-one">
                 <form @submit.prevent="change()">
@@ -77,7 +81,6 @@
       </div>
     </div>
   </section>
- 
 </template>
 <script>
 import { userDetails } from "@/common/Service.js";
@@ -131,7 +134,7 @@ export default {
         .then((res) => {
           console.log(res.data);
           this.$swal("Password updated successfully", "", "success");
-          this.user1=""
+          this.user1 = "";
         })
         .catch((err) => {
           console.log(err);

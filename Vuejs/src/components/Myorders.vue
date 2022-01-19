@@ -23,6 +23,7 @@
           <th>Product price</th>
           <th>Applied coupan</th>
           <th>Amount</th>
+          <th>paid amout</th>
         </tr>
       </thead>
       <tbody>
@@ -44,6 +45,7 @@
           <td>{{ order.product_price }}</td>
           <td>{{ order.coupon_code }}</td>
           <td>{{ order.amount }}</td>
+          <td>{{ order.paidAmount }}</td>
         </tr>
       </tbody>
     </table>
