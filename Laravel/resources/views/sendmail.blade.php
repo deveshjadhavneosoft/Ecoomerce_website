@@ -7,7 +7,7 @@
 
 <body>
     <div class="container text-center">
-       
+
         <h2>Shopper</h2>
         <h3>Thankyou for ordering from us! Your order will be delivered soon by our delivery personnel.</h3>
         <h4>Order Details</h4>

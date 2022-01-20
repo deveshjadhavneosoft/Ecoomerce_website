@@ -13,7 +13,7 @@
     width: 500px;
   }
 </style>
-<!-- <div class="content-wrapper"> -->
+
     <div>
     @if(Session::has('msg'))
 <div class="alert alert-success">{{Session::get('msg')}}</div>

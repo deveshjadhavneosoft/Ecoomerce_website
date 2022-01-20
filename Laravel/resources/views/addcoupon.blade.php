@@ -13,7 +13,7 @@
     width: 500px;
   }
 </style>
-<!-- <div class="content-wrapper"> -->
+
     <div>
     @if(Session::has('msg'))
 <div class="alert alert-success">{{Session::get('msg')}}</div>
@@ -25,12 +25,7 @@
     <form method="POST" action="/coupons" class="border rounded shadow ">
         <h2 class="text-center text-dark">Coupons</h2>
         @csrf()
-        <!-- <div>
-            Code<input type="text" class="form-control" name="code" />
-            @if($errors->has('code'))
-            <label class="text-danger">{{$errors->first('code')}}</label>
-            @endif
-        </div> -->
+        
         <div>
             @php
             function unique_code($limit)

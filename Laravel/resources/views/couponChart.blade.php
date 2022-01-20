@@ -33,16 +33,13 @@
     <div id="piechart" style="width: 900px; height: 500px;"></div>
 </div>
 <style>
-    
-
-    .container{
+    .container {
         width: 500px;
-       
+
         display: flex;
         margin-left: 500px;
         justify-content: center;
     }
-
 </style>
 @stop
 <!-- /.content-wrapper -->

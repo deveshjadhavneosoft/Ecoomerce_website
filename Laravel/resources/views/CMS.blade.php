@@ -1,16 +1,17 @@
 @extends('layouts.app')
 @section('content')
 <style>
-    .container{
-    display: flex;
-    justify-content: center;
-    
-    margin-left: 200px;
-  }
-  form{
-    padding:20px 30px 40px;
-    width: 500px;
-  }
+    .container {
+        display: flex;
+        justify-content: center;
+
+        margin-left: 200px;
+    }
+
+    form {
+        padding: 20px 30px 40px;
+        width: 500px;
+    }
 </style>
 <div class="container">
     @if(Session::has('msg'))

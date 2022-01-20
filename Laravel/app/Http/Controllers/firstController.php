@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class firstController extends Controller
 {
+    // sales report
     public function salesReport()
     {
         $sales = DB::select(DB::raw("select sum(product_quantity) as total,product_name as name from user_orders group by product_name "));
@@ -18,6 +19,8 @@ class firstController extends Controller
         $details = $data;
         return view('chart', compact('details'));
     }
+
+    //user report
     public function userReport()
     {
         $users = DB::select(DB::raw("select count(*) as total,role_type as name from users group by role_type "));
@@ -28,6 +31,7 @@ class firstController extends Controller
         $user_details = $data;
         return view('userChart', compact('user_details'));
     }
+    //coupon report
     public function couponReport()
     {
         $coupons = DB::select(DB::raw("select count(*) as total,status from coupons  group by status "));

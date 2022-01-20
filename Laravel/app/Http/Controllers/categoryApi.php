@@ -49,9 +49,7 @@ class categoryApi extends Controller
      */
     public function show($id)
     {
-        // $product = Product::join('product_images', 'products.id', '=', 'product_images.products_id')->where('products.category_id', $id)->get();
-
-        // return response()->json(["product" => $product]);
+        
         $list = [];
         $product = Product::where('category_id', $id)->get();
         foreach ($product as $pro) {

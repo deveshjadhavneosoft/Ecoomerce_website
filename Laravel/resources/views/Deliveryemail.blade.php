@@ -7,7 +7,7 @@
 
 <body>
     <div class="container text-center">
-       
+
         <h2>Shopper</h2>
         <h3> your order is {{ $status }}.</h3>
         <h4>Order Details</h4>
